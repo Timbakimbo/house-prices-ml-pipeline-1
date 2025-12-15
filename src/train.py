@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import root_mean_squared_error, mean_absolute_error 
-from src.pre_processing import split_target_feature, split_num_cat, build_preprocessor
 from src.data_loading import load_raw_data
+from src.pre_processing import (split_target_feature, split_num_cat, build_preprocessor)
 from sklearn.pipeline import Pipeline
 
 
@@ -60,7 +60,6 @@ def main():
     num_cols, cat_cols = split_num_cat(X)
     X_num = X[num_cols]
     X_cat = X[cat_cols] 
-
     # Train a Baseline Model
     baseline_rf_model, baseline_rf_rmse, baseline_rf_mae = train_baseline_rf_1(X_num, y, random_state=0)
 
