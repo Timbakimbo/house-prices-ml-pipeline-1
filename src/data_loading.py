@@ -1,4 +1,7 @@
 import pandas as pd 
 
-train = pd.read_csv('data/raw/train.csv')
-test = pd.read_csv('data/raw/test.csv')
+def load_raw_data(train_path, test_path):
+    train = pd.read_csv(train_path)
+    test = pd.read_csv(test_path)
+    return train, test
+
