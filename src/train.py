@@ -67,7 +67,7 @@ def main():
     print(f'Baseline RF Validation MAE: {baseline_rf_mae}')
     
     # Train second model with better preprocessing
-    preprocessor = build_preprocessor(num_cols, cat_cols)
+    preprocessor = build_preprocessor(X, num_cols, cat_cols, card_threshold=10)
     pipe, rmse, mae = train_rf_2(X, y, preprocessor, random_state=0)
 
     print(f"Baseline RF RMSE: {rmse:.2f}")
